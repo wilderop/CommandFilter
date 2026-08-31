@@ -1,0 +1,19 @@
+name: CommandFilter
+version: '${project.version}'
+main: commandfilter.CommandFilter
+api-version: '26.2'
+author: wilder0p
+description: Filters which commands regular players can see, with a live OP GUI
+commands:
+  commandfilter:
+    description: Open the command visibility GUI, or reload/scan
+    usage: /commandfilter [reload|scan|search <text>]
+    aliases: [cf]
+    permission: commandfilter.admin
+permissions:
+  commandfilter.admin:
+    description: Open the GUI and manage which commands players can see
+    default: op
+  commandfilter.bypass:
+    description: See all commands unfiltered (OPs have this by default)
+    default: op
