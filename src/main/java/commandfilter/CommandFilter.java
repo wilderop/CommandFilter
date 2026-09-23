@@ -46,10 +46,12 @@ public final class CommandFilter extends JavaPlugin implements Listener, TabExec
             "home", "sethome", "delhome", "newhome", "spawn", "tpa", "tpahere", "tpaccept", "tpdeny",
             "back", "warp", "warps", "rtp",
             "cape", "spawncape",
+            "spawnluck", "ka", "beam", "katet",
             "council", "proposals", "activity", "councilboard", "pcboard", "activityboard",
             "restore",
             "topkiller", "topgui", "top", "stats", "profile",
             "vote", "discordlink", "nick", "ignore", "report",
+            "bug", "bugs",
             "register", "login", "verify", "event", "contest", "die"
     );
 
@@ -73,6 +75,7 @@ public final class CommandFilter extends JavaPlugin implements Listener, TabExec
             command.setTabCompleter(this);
         }
 
+        // Command map is incomplete during onEnable (other plugins still loading).
         Bukkit.getScheduler().runTask(this, this::scanServerCommands);
         Bukkit.getScheduler().runTaskLater(this, this::scanServerCommands, 20L);
         Bukkit.getScheduler().runTaskLater(this, this::scanServerCommands, 100L);
